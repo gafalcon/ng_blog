@@ -1,0 +1,27 @@
+<br />
+<br />
+<br />
+<div class="container">
+    <h1>User posts</h1>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview" *ngFor="let post of posts">
+                <a [routerLink]="['post', post._id]">
+                    <h2 class="post-title">
+                        {{ post.title }}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{ post.subtitle }}
+                    </h3>
+                </a>
+                <p class="post-meta">Posted by
+                    on {{ post.createdAt | date }}</p>
+                <hr>
+            </div>
+            <!-- Pager -->
+            <div class="clearfix">
+                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
